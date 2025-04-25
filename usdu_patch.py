@@ -1,5 +1,5 @@
 # Make some patches to the script
-import ultimate_upscale as usdu
+from .repositories import ultimate_upscale as usdu
 # import modules.shared as shared
 from .modules import shared
 import math
