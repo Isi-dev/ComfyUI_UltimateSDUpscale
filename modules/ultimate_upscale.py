@@ -1,7 +1,7 @@
 import math
 # import gradio as gr
 from PIL import Image, ImageDraw, ImageOps
-import processing, shared, images, devices, scripts
+from ..modules import processing, shared, images, devices, scripts
 from .processing import StableDiffusionProcessing
 from .processing import Processed
 from .shared import opts, state
