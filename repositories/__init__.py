@@ -11,4 +11,4 @@ script_path = os.path.join(repositories_path, repo_name, f"{script_name}.py")
 spec = importlib.util.spec_from_file_location(script_name, script_path)
 ultimate_upscale = importlib.util.module_from_spec(spec)
 sys.modules[script_name] = ultimate_upscale
-# spec.loader.exec_module(ultimate_upscale)
+spec.loader.exec_module(ultimate_upscale)
