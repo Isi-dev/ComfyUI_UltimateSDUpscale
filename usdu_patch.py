@@ -1,6 +1,7 @@
 # Make some patches to the script
-from repositories import ultimate_upscale as usdu
-import modules.shared as shared
+from .repositories import ultimate_upscale as usdu
+# import modules.shared as shared
+from .modules import shared
 import math
 from PIL import Image
 
