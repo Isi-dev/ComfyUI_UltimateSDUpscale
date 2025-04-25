@@ -1,10 +1,10 @@
 import math
 # import gradio as gr
 from PIL import Image, ImageDraw, ImageOps
-from modules import processing, shared, images, devices, scripts
-from modules.processing import StableDiffusionProcessing
-from modules.processing import Processed
-from modules.shared import opts, state
+import processing, shared, images, devices, scripts
+from .processing import StableDiffusionProcessing
+from .processing import Processed
+from .shared import opts, state
 from enum import Enum
 
 elem_id_prefix = "ultimateupscale"
