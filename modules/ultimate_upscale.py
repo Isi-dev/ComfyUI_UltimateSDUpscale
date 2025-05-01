@@ -70,7 +70,7 @@ class USDUpscaler():
         # Log info
         print(f"Canva size: {self.p.width}x{self.p.height}")
         print(f"Image size: {self.image.width}x{self.image.height}")
-        print(f"Scale factor: {self.scale_factor}")
+        # print(f"Scale factor: {self.scale_factor}")
         # Check upscaler is not empty
         if self.upscaler.name == "None":
             self.image = self.image.resize((self.p.width, self.p.height), resample=Image.LANCZOS)
@@ -79,7 +79,7 @@ class USDUpscaler():
         self.get_factors()
         # Upscaling image over all factors
         for index, value in self.scales:
-            print(f"Upscaling iteration {index+1} with scale factor {value}")
+            # print(f"Upscaling iteration {index+1} with scale factor {value}")
             self.image = self.upscaler.scaler.upscale(self.image, value, self.upscaler.data_path)
         # Resize image to set values
         self.image = self.image.resize((self.p.width, self.p.height), resample=Image.LANCZOS)
@@ -120,8 +120,8 @@ class USDUpscaler():
         print(f"Tile size: {self.redraw.tile_width}x{self.redraw.tile_height}")
         print(f"Tiles amount: {self.rows * self.cols}")
         print(f"Grid: {self.rows}x{self.cols}")
-        print(f"Redraw enabled: {self.redraw.enabled}")
-        print(f"Seams fix mode: {self.seams_fix.mode.name}")
+        # print(f"Redraw enabled: {self.redraw.enabled}")
+        # print(f"Seams fix mode: {self.seams_fix.mode.name}")
 
     def add_extra_info(self):
         self.p.extra_generation_params["Ultimate SD upscale upscaler"] = self.upscaler.name
