@@ -231,7 +231,8 @@ def process_images(p: StableDiffusionProcessing) -> Processed:
     samples = sample(p.model, p.seed, p.steps, p.cfg, p.sampler_name, p.scheduler, positive_cropped,
                      negative_cropped, latent, p.denoise, p.custom_sampler, p.custom_sigmas)
     
-
+    del p.model
+    
     # Update the progress bar
     if p.progress_bar_enabled:
         p.pbar.update(1)
