@@ -227,8 +227,10 @@ def process_images(p: StableDiffusionProcessing) -> Processed:
     (latent,) = p.vae_encoder.encode(p.vae, batched_tiles)
 
     # Generate samples
+    print("Sampling with ditmodel...")
     samples = sample(p.model, p.seed, p.steps, p.cfg, p.sampler_name, p.scheduler, positive_cropped,
                      negative_cropped, latent, p.denoise, p.custom_sampler, p.custom_sigmas)
+    
 
     # Update the progress bar
     if p.progress_bar_enabled:
