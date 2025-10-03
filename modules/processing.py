@@ -1,5 +1,6 @@
 from PIL import Image, ImageFilter
 import torch
+import gc
 import math
 from nodes import common_ksampler, VAEEncode, VAEDecode, VAEDecodeTiled
 from comfy_extras.nodes_custom_sampler import SamplerCustom
@@ -232,6 +233,8 @@ def process_images(p: StableDiffusionProcessing) -> Processed:
                      negative_cropped, latent, p.denoise, p.custom_sampler, p.custom_sigmas)
     
     del p.model
+    torch.cuda.empty_cache()
+    gc.collect()
     
     # Update the progress bar
     if p.progress_bar_enabled:
